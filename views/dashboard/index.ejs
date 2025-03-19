@@ -1,0 +1,71 @@
+<div class="container-fluid pb-5 mb-5">
+  <!-- Header Section -->
+  <header class="row mb-4 align-items-center">
+    <div class="col">
+      <h1 class="fw-bold">Hey, <%= userName %></h1>
+    </div>
+    <div class="col text-end">
+      <a href="/dashboard/add" class="btn btn-outline-primary" aria-label="Add a new note">+ Add New Note</a>
+    </div>
+  </header>
+
+  <!-- Notes Section -->
+  <section class="row">
+    <% if (notes.length > 0) { %>
+      <% notes.forEach((note) => { %>
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+          <div class="card border-primary shadow-sm h-100">
+            <a href="/dashboard/item/<%= note._id %>" class="card-body text-decoration-none text-dark">
+              <h5 class="card-title text-primary fw-bold"><%= note.title %></h5>
+              <p class="card-text text-truncate"><%= note.body %></p>
+            </a>
+          </div>
+        </div>
+      <% }); %>
+    <% } else { %>
+      <div class="row align-items-center justify-content-center">
+        <div class="col-md-4 text-center">
+          <img
+            src="/images/human-3.svg"
+            alt="Illustration of a person pointing to a create button"
+            class="img-fluid"
+          />
+        </div>
+        <div class="col-md-6 mt-4 text-center">
+          <h2 class="fw-bold">Excited to have you here!</h2>
+          <h4 class="text-muted">
+            Let's start with your first note!<br /><br />
+            <a href="/dashboard/add" class="btn btn-outline-primary">Create One!</a>
+          </h4>
+        </div>
+      </div>
+    <% } %>
+  </section>
+
+  <!-- Pagination Section -->
+  <% if (notes.length > 0) { %>
+    <nav aria-label="Page navigation">
+      <ul class="pagination justify-content-center mt-5">
+        <% const startPage = Math.max(1, current - 4); %>
+        <% const endPage = Math.min(startPage + 9, pages); %>
+
+        <!-- Previous Page -->
+        <li class="page-item <%= current === 1 ? 'disabled' : '' %>">
+          <a class="page-link" href="<%= current > 1 ? '/dashboard/?page=' + (current - 1) : '#' %>" aria-label="Previous">Previous</a>
+        </li>
+
+        <!-- Page Range -->
+        <% for (let i = startPage; i <= endPage; i++) { %>
+          <li class="page-item <%= i === current ? 'active' : '' %>">
+            <a class="page-link" href="/dashboard/?page=<%= i %>"><%= i %></a>
+          </li>
+        <% } %>
+
+        <!-- Next Page -->
+        <li class="page-item <%= current === pages ? 'disabled' : '' %>">
+          <a class="page-link" href="<%= current < pages ? '/dashboard/?page=' + (current + 1) : '#' %>" aria-label="Next">Next</a>
+        </li>
+      </ul>
+    </nav>
+  <% } %>
+</div>

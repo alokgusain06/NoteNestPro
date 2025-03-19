@@ -1,0 +1,62 @@
+<div class="container-fluid pb-5 mb-5">
+  <!-- Breadcrumb Navigation -->
+  <div class="row mb-4">
+    <div class="col">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="/dashboard" class="text-decoration-none">Dashboard</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">Add Note</li>
+       
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Header Section -->
+  <div class="row mb-4">
+    <div class="col d-flex justify-content-between align-items-center">
+      <h1 class="h3 fw-bold">Add Note</h1>
+     
+    </div>
+  </div>
+
+  <!-- Form Section -->
+  <form action="/dashboard/add" method="POST" class="position-relative">
+    <!-- Title Input -->
+    <div class="form-group mb-4">
+      <label for="title" class="visually-hidden">Title</label>
+      <input
+        type="text"
+        class="form-control fw-bold fs-4 shadow-sm border-0"
+        id="title"
+        name="title"
+        placeholder="Title"
+        aria-label="Note title"
+        required
+      />
+    </div>
+
+    <!-- Body Input -->
+    <div class="form-group mb-4">
+      <label for="body" class="visually-hidden">Body</label>
+      <textarea
+        class="form-control pt-5 fs-4 shadow-sm"
+        id="body"
+        name="body"
+        placeholder="Take a note..."
+        rows="12"
+        aria-label="Note body"
+        required
+      ></textarea>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary btn-lg w-100 shadow">
+        Add Note By clicking Here
+      </button>
+    </div>
+  </form>
+</div>

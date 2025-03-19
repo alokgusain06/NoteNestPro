@@ -1,0 +1,183 @@
+/* Button Styles */
+.btn {
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  display: inline-block;
+  background-color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1), 0 5px 25px rgba(0, 0, 0, 0.15); /* Soft shadow with depth */
+  overflow: hidden; /* Ensures the shadow does not overflow the button */
+}
+
+.btn-primary {
+  background-color: #ff0090;
+  border:seashell;
+  color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1), 0 5px 25px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 1;
+}
+
+
+/* Unique hover effect with glowing border and internal shadow */
+.btn-primary:hover {
+  background-color: #ff9add; /* Deep orange-red on hover */
+  border-color:#ff9add;/* Enhanced shadow */
+  animation: pulse 1.5s infinite; /* Pulse effect */
+}
+
+/* Glowing effect when the button is hovered */
+.btn-primary:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  transition: all 0.4s ease;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+}
+
+
+
+
+/* Normal state for btn-outline-primary */
+.btn-outline-primary {
+  background-color: #ff0090;
+  border:seashell;
+  color: white;
+
+}
+
+/* Hover effect for btn-outline-primary */
+.btn-outline-primary:hover {
+   background-color: #ff9add;/* No background change */
+  border-color: seashell; /* Change border color on hover */
+  color: white;  /* Change text color to match border */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2), 0 8px 30px rgba(0, 0, 0, 0.25); /* Add glowing shadow */
+  animation: pulse 1.5s infinite; /* Pulse effect */
+}
+
+/*
+
+/* Active state with "press down" effect */
+.btn-outline-primary:active {
+  background-color: #ff1493; /* Dark pink color */
+  color: white;
+  border-color: #ff1493; /* Ensure border color remains consistent */
+}
+
+
+
+
+
+
+.text-pink {
+  color: #ff1493; /* Dark pink color */
+  font-size: 2rem; /* Increased font size */
+}
+
+/* ...existing code... */
+
+.note-textarea {
+  border: 2px solid pink;
+}
+
+.note-textarea:focus {
+  border: 2px solid pink; /* Ensure border color remains pink on focus */
+  outline: none; /* Remove default outline */
+}
+
+/* ...existing code... */
+
+
+
+
+
+
+
+.text-dark-pink {
+  color: #ff1493; /* Dark pink color */
+}
+
+/* Button pulse animation */
+@keyframes pulse {
+  0% {
+     transform: scale(1);
+     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2), 0 8px 30px rgba(0, 0, 0, 0.25);
+  }
+  50% {
+     transform: scale(1.1);
+     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 10px 35px rgba(0, 0, 0, 0.3);
+  }
+  100% {
+     transform: scale(1);
+     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2), 0 8px 30px rgba(0, 0, 0, 0.25);
+  }
+}
+
+
+
+/* Pink border for cards */
+.border-pink {
+  border: 2px solid pink;
+}
+
+/* Button styles */
+.btn-outline-primary {
+  background-color: #ff0090; /* Your desired background color */
+  border: seashell;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-outline-primary:hover {
+  background-color: #ff69b4; /* Light pink color */
+  color: white;
+}
+
+.btn-outline-primary:active,
+.btn-outline-primary:focus {
+  background-color: #ff1493; /* Dark pink color */
+  color: white;
+  border-color: #ff1493; /* Ensure border color remains consistent */
+  outline: none; /* Remove default outline */
+}
+
+/* Text pink color */
+.text-pink {
+  color: #ff1493; /* Dark pink color */
+  font-size: 2rem; /* Increased font size */
+  transition: color 0.3s ease, font-size 0.3s ease; /* Smooth transition */
+}
+
+.text-pink:hover {
+  color: #ff69b4; /* Light pink color */
+  font-size: 2.2rem; /* Increased font size on hover */
+}
+
+/* Note textarea styles */
+.note-textarea {
+  border: 2px solid pink;
+}
+
+.note-textarea:focus {
+  border: 2px solid pink; /* Ensure border color remains pink on focus */
+  outline: none; /* Remove default outline */
+}
+
+/* ...existing code... */
